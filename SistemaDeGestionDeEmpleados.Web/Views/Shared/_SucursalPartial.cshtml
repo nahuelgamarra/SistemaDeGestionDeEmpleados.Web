@@ -1,0 +1,14 @@
+﻿@using SistemaDeGestionDeEmpleados.Data.EF
+
+
+<label class="col-md-2 control-label">Sucursal</label>
+
+<select id="IdSucursal" name="IdSucursal">
+
+    <option> -</option>
+    @foreach(Sucursal iten in ViewBag.Sucursal)
+    {
+        <option value="@iten.IdSucursal"> @iten.Ciudad -</option>
+    }
+
+</select>

@@ -1,0 +1,25 @@
+﻿@using SistemaDeGestionDeEmpleados.Data.EF
+@model Empleado
+
+<h2>Cargar empleado</h2>
+
+<form asp-action="Crear" method="post" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="IdSucursal" class="col-md-2 control-label">Sucursal</label>
+        <div class="col-md-10">
+            <partial name="/Views/Shared/_SucursalPartial.cshtml">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NombreCompleto" class="col-md-2 control-label">Nombre Completo</label>
+        <div class="col-md-10">
+            <input asp-for="NombreCompleto" class="form-control" />
+            <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear empleado</button>
+</form>

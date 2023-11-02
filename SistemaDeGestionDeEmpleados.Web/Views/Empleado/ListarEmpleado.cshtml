@@ -1,0 +1,32 @@
+﻿@using SistemaDeGestionDeEmpleados.Data.EF
+@model List<Empleado>
+
+<h2>Empleados</h2>
+
+<form action="/empleado/ListarEmpleado" method="post">
+    <div class="form-horizontal">
+        <label>Filtrar</label>
+        <partial name="/Views/Shared/_SucursalPartial.cshtml">
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre Empleado</th>
+            <th>Sucursal Ciudad</th>
+            <th>Sucursal Dirección</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model)
+        {
+            <tr>
+                <td>@empleado.NombreCompleto</td>
+                <td>@empleado.IdSucursalNavigation.Ciudad</td>
+                <td>@empleado.IdSucursalNavigation.Direccion</td>
+            </tr>
+        }
+    </tbody>
+</table>
